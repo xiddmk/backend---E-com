@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    #main {
+        height: 100vh;
+        width: 100%;
+        background-color: red;
+        padding: 100px 150px;
+    }
+
+    .main {
+        height: 100%;
+        width: 100%;
+        background-color: aqua;
+        display: flex;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 50px 50px 87px #a20000,
+            -50px -50px 87px #a20000;
+    }
+
+    .main .left {
+        height: 100%;
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        padding-top: 100px;
+        align-items: center;
+        gap: 30px;
+        background-color: aliceblue;
+    }
+
+    .left h1 {
+        font-family: monospace;
+        font-weight: 800;
+    }
+
+    .left a {
+        text-decoration: none;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+
+    }
+
+    .main .right {
+        height: 100%;
+        width: 60%;
+        background-color: rgb(33, 104, 167);
+    }
+
+    .main .right img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .inputbox {
+        position: relative;
+        width: 220px;
+    }
+
+    .inputbox input {
+        position: relative;
+        width: 100%;
+        padding: 20px 10px 10px;
+        background: transparent;
+        outline: none;
+        box-shadow: none;
+        border: none;
+        color: #ffffff;
+        font-size: 1em;
+        letter-spacing: 0.05em;
+        transition: 0.5s;
+        z-index: 10;
+    }
+
+    .inputbox span {
+        position: absolute;
+        left: 0;
+        padding: 20px 10px 10px;
+        font-size: 1em;
+        color: #000000;
+        letter-spacing: 00.05em;
+        transition: 0.5s;
+        pointer-events: none;
+    }
+
+    .inputbox input:valid~span,
+    .inputbox input:focus~span {
+        color: #ff0000;
+        transform: translateX(-10px) translateY(-34px);
+        font-size: 0, 75em;
+    }
+
+    .inputbox i {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 2px;
+        background: #ff0000;
+        border-radius: 4px;
+        transition: 0.5s;
+        pointer-events: none;
+        z-index: 9;
+    }
+
+    .inputbox input:valid~i,
+    .inputbox input:focus~i {
+        height: 44px;
+    }
+
+
+
+
+    .btn-23,
+    .btn-23 *,
+    .btn-23 :after,
+    .btn-23 :before,
+    .btn-23:after,
+    .btn-23:before {
+        border: 0 solid;
+        box-sizing: border-box;
+    }
+
+    .btn-23 {
+        -webkit-tap-highlight-color: transparent;
+        -webkit-appearance: button;
+        background-color: #ff0000;
+        background-image: none;
+        color: #ffffff;
+        cursor: pointer;
+        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+            Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+            Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+        font-size: 100%;
+        font-weight: 800;
+        line-height: 1.5;
+        margin: 0;
+        -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
+        padding: 0;
+        text-transform: uppercase;
+        border-color: transparent;
+        width: 100%;
+    }
+
+    .btn-23:disabled {
+        cursor: default;
+    }
+
+    .btn-23:-moz-focusring {
+        outline: auto;
+    }
+
+    .btn-23 svg {
+        display: block;
+        vertical-align: middle;
+    }
+
+    .btn-23 [hidden] {
+        display: none;
+    }
+
+    .btn-23 {
+        border-radius: 99rem;
+        border-width: 2px;
+        overflow: hidden;
+        padding: 0.8rem 2rem;
+        position: relative;
+    }
+
+    .btn-23 span {
+        display: grid;
+        inset: 0;
+        place-items: center;
+        position: absolute;
+        transition: opacity 0.2s ease;
+    }
+
+    .btn-23 .marquee {
+        --spacing: 5em;
+        --start: 0em;
+        --end: 5em;
+        -webkit-animation: marquee 1s linear infinite;
+        animation: marquee 1s linear infinite;
+        -webkit-animation-play-state: paused;
+        animation-play-state: paused;
+        opacity: 0;
+        position: relative;
+        text-shadow: #000000 var(--spacing) 0, #000000 calc(var(--spacing) * -1) 0,
+            #000000 calc(var(--spacing) * -2) 0;
+    }
+
+    .btn-23:hover .marquee {
+        -webkit-animation-play-state: running;
+        animation-play-state: running;
+        opacity: 1;
+    }
+
+    .btn-23:hover .text {
+        opacity: 0;
+    }
+
+    @-webkit-keyframes marquee {
+        0% {
+            transform: translateX(var(--start));
+        }
+
+        to {
+            transform: translateX(var(--end));
+        }
+    }
+
+    @keyframes marquee {
+        0% {
+            transform: translateX(var(--start));
+        }
+
+        to {
+            transform: translateX(var(--end));
+        }
+    }
+
+
+      
+/* Add media query for tablets */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    #main {
+        padding: 100px 50px; /* Adjust padding for tablet screens */
+    }
+    .main {
+        flex-direction: column-reverse; /* Stack columns for tablet screens */
+    }
+    .main .left,
+    .main .right {
+        width: 100%; /* Full width for tablet screens */
+    }
+    .inputbox {
+        width: 100%; /* Full width for tablet screens */
+    }
+}
+
+/* Add media query for mobile devices */
+@media only screen and (max-width: 768px) {
+    #main {
+        padding: 10px 20px; /* Adjust padding for mobile screens */
+    }
+    .main .left {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    .main {
+        flex-direction: column-reverse; /* Stack columns for mobile screens */
+    }
+    .main .left,
+    .main .right {
+        width: 100%; /* Full width for mobile screens */
+    }
+    .inputbox {
+        width: 100%; /* Full width for mobile screens */
+    }
+}
+
+</style>
+
+<body>
+    <div id="main">
+        <div class="main">
+            <div class="left">
+                <h1>Log In here</h1>
+
+                <form action="/signin" method="post">
+                    <div class="inputbox">
+                        <input required="required" type="text" name="username">
+                        <span>Username</span>
+                        <i></i>
+                    </div>
+                    <div class="inputbox">
+                        <input required="required"  type="password" name="password">
+                        <span>Password</span>
+                        <i></i>
+                    </div>
+                    <button type="submit" class="btn-23">
+                        <span class="text">Sign In</span>
+                        <span aria-hidden="" class="marquee">Sign In</span>
+                    </button>
+                </form>
+
+
+
+                <p>Dont have an account?
+                    <a href="/signup"> SignUp.</a>
+                </p>
+
+
+            </div>
+            <div class="right">
+                <img src="/images/slider3.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

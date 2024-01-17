@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Amazon Clone</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<style>
+
+  *{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+
+  html,body{
+    height: 100%;
+    width: 100%;
+  }
+
+  .bg-image-vertical {
+    position: relative;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: auto 100%;
+  }
+
+  .intro{
+    height: 100%;
+    width: 100%;
+  }
+
+</style>
+
+<body>
+
+
+
+
+
+  <section class="intro">
+    <div class="bg-image-vertical h-100" style="background-color: #EFD3E4;
+            background-image: url(https://mdbootstrap.com/img/Photos/new-templates/search-box/img1.jpg);
+          ">
+      <div class="mask d-flex align-items-center h-100">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-12 col-lg-10">
+              <div class="card" style="border-radius: 1rem;">
+                <div class="card-body p-5">
+
+                  <h1 class="mb-5 text-center">Upload Your Product</h1>
+
+                  <form action="/createProduct" method="post" enctype="multipart/form-data">
+
+                    <div class="row">
+
+                      <div class="col-12 col-md-6 mb-4">
+                        <div class="form-outline">
+                          <input required type="text" name="name" class="form-control" />
+                          <label class="form-label" for="form6Example1">Name</label>
+                        </div>
+                      </div>
+
+                      <div class="col-12 col-md-6 mb-4">
+                        <div class="form-outline">
+                          <input type="text" name="desc" id="form6Example2" class="form-control" />
+                          <label class="form-label" for="form6Example2">Description</label>
+                        </div>
+                      </div>
+
+                    </div>
+
+                    <!-- Text input -->
+                    <div class="form-outline mb-4">
+                      <input type="number" name="qty" id="form6Example3" class="form-control" />
+                      <label class="form-label" for="form6Example3">Qty</label>
+                    </div>
+
+                    <!-- Text input -->
+                    <div class="form-outline mb-4">
+                      <input type="number" name="price" id="form6Example4" class="form-control" />
+                      <label class="form-label" for="form6Example4">Price</label>
+                    </div>
+
+                    <!-- Email input -->
+                    <div class="form-outline mb-4">
+                      <label for="productCategory" class="form-label">Category</label>
+                      <select required name="category" class="form-select" id="productCategory">
+                        <option value="" disabled selected>Select category</option>
+                        <option value="Accessories">Accessories</option>
+                        <option value="Bottom">Bottom</option>
+                        <option value="Footwear">Footwear</option>
+                        <option value="Tops">Tops</option>
+                        <option value="Dresses">Dresses</option>
+                      </select>
+                    </div>
+
+
+                    <div class="form-outline mb-4">
+                      <label for="productImages" class="form-label">Product Images</label>
+                      <input required type="file" name="images" class="form-control" id="productImages">
+                      <span class='small'>Supported files: jpg, jpeg, png.</span>
+                    </div>
+
+
+
+
+
+                    <!-- Submit button -->
+                    <button type="submit" class="btn btn-success btn-rounded btn-block">Submit Product</button>
+                    <a class="btn btn-danger btn-rounded" href="/profile">Back</a>
+
+                  </form>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.0/axios.min.js"
+    integrity="sha512-WrdC3CE9vf1nBf58JHepuWT4x24uTacky9fuzw2g/3L9JkihgwZ6Cfv+JGTtNyosOhEmttMtEZ6H3qJWfI7gIQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+
+</body>
+
+</html>

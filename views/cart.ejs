@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+  <!-- MDB -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.0.0/mdb.min.css" rel="stylesheet" />
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  #main {
+    height: 100%;
+    width: 100%;
+  }
+
+  .mainpage {
+    height: 100%;
+    width: 100%;
+  }
+
+  .header {
+    height: 20%;
+    width: 100%;
+    background-color: rgb(219, 219, 219);
+    border-bottom: 1px solid rgb(196, 196, 196);
+  }
+
+  .header p {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .navbar {
+    padding: 25px 40px;
+    height: 80%;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navbar .navleft {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .navbar .navleft h3 {
+    display: flex;
+    padding-top: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+
+
+  .navbar .navleft a {
+    text-decoration: none;
+    font-size: 27px;
+
+  }
+
+  .navbar .right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .cart a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    gap: 10px;
+    font-size: 27px;
+  }
+
+  .banner {
+    height: 80vh;
+    width: 100%;
+    background-color: rgb(230, 230, 230);
+    display: flex;
+    justify-content: center;
+  }
+
+  .banner img {
+    height: 100%;
+    width: 93%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .conta {
+    width: 100%;
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .conta .card {
+    border: none;
+    background-color: transparent;
+    transition: all 1s;
+  }
+
+
+  .bag button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 23px;
+  }
+
+  .bag a i {
+    font-size: 22px;
+    color: black;
+  }
+
+
+  .footer {
+    height: 75vh;
+    width: 100%;
+    background-color: #ddd1c1;
+    color: rgb(0, 0, 0);
+  }
+
+  .footer .footertop {
+    height: 30%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: whitesmoke;
+    justify-content: center;
+    color: black;
+
+  }
+
+  .footer .footertop .return,
+  .return1 {
+    width: 22%;
+
+
+  }
+
+  .footer .footertop .return i {
+    color: rgb(255, 185, 93);
+    font-size: 30px;
+  }
+
+  .footer .footertop .return1 i {
+    color: rgb(255, 185, 93);
+    font-size: 30px;
+  }
+
+  .footer .footertop .inputbox {
+    width: 35%;
+
+  }
+
+  .footer .footertop .inputbox input {
+    width: 100%;
+    padding: 13px 0;
+    border: none;
+    outline: none;
+    border: 0.5px solid gray;
+  }
+
+  .footer .footertop button {
+    padding: 13px 40px;
+    margin-top: 36px;
+    border: none;
+    outline: none;
+    border: 1px solid rgb(0, 0, 0);
+  }
+
+
+  .footerbottom {
+    height: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    border-bottom: 2px solid rgb(255, 255, 255);
+  }
+
+  .footerbottom .one {
+    height: 100%;
+    width: 22%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .footerbottom .one img {
+    height: 20%;
+    width: 20%;
+  }
+
+  .footerbottom .one i {
+    font-size: 25px;
+  }
+
+  .footerbottom .two {
+    height: 100%;
+    width: 22%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .footerbottom .three {
+    height: 100%;
+    width: 22%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .footerbottom .four {
+    height: 100%;
+    width: 22%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .bot {
+    display: flex;
+    padding: 10px 35px;
+    justify-content: space-between;
+  }
+
+  .bot .logos {
+    display: flex;
+  }
+
+  .bot .logos img {
+    height: 35px;
+  }
+
+
+  .hide {
+    display: none;
+  }
+
+  .myDIV:hover+.hide {
+    display: block;
+    color: red;
+  }
+
+
+  form button {
+    color: rgb(0, 0, 0);
+    background-color: transparent;
+    outline: none;
+    border: none;
+  }
+
+  form button i {
+    font-size: 30px;
+  }
+
+  .responsive {
+    padding: 20px;
+  }
+
+  /* Media Queries */
+  @media only screen and (max-width: 768px) {
+
+    .main,
+    .mainpage,
+    .header {
+      overflow: hidden;
+    }
+
+    .navbar .right {
+      align-items: center;
+      display: flex;
+      font-size: 18px;
+      justify-content: space-between;
+    }
+
+    .navbar .right .cart {
+      display: none;
+    }
+
+    .navbar .navleft {
+      display: none;
+    }
+
+    .right a {
+      font-size: 22px;
+      padding-right: 5px;
+    }
+
+    .footer {
+      width: 100%;
+      height: fit-content;
+    }
+
+    .footer .footertop {
+      width: 100%;
+      height: fit-content;
+      display: flex;
+      padding: 0px 15px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+    }
+
+    .footer .footertop .return,
+    .return1,
+    a {
+      width: 100%;
+    }
+
+    .footer .footertop .inputbox {
+      width: 100%;
+    }
+
+    .footer .footertop a button {
+      width: 100%;
+      margin-top: 0px;
+      margin-bottom: 20px;
+    }
+
+
+    .footerbottom {
+      display: flex;
+      padding: 30px 0px;
+      gap: 20px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .footerbottom .one {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      align-items: center;
+    }
+
+    .footerbottom .one img {
+      width: 20%;
+      padding-bottom: 20px;
+    }
+
+    .footerbottom .two {
+      width: 100%;
+
+    }
+
+    .footerbottom .three {
+      width: 100%;
+    }
+
+    .footerbottom .four {
+      width: 100%;
+    }
+
+    .responsive {
+      padding: 0;
+    }
+
+    .remoov {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .remoov p {
+      width: 100%;
+      height: 100%;
+    }
+
+    .remoov a {
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+      height: 100%;
+    }
+
+
+    .increment {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .increment .netprice {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+
+
+
+  }
+</style>
+
+<body>
+
+
+
+  <div id="main">
+    <div class="mainpage">
+      <div class="header">
+        <div class="navbar px-5 pt-3 pb-3">
+          <div class="navleft">
+
+
+            <h3>Cart</h3>
+
+
+
+
+
+
+          </div>
+          <div class="navmidd">
+
+            <a href="/homepage">
+              <img
+                src="https://websitedemos.net/fashion-designer-boutique-02/wp-content/uploads/sites/917/2021/07/site-logo.svg"
+                alt="logo">
+
+            </a>
+
+          </div>
+          <div class="right">
+
+            <div class="cart">
+
+              <a href="/cart">
+                <small>
+                  <%=(user.cart.price) %>
+                </small>
+                <i class="ri-shopping-cart-line"></i>
+              </a>
+
+            </div>
+
+            <a href="/profile">
+              <i class="fa-solid fa-user"></i>
+            </a>
+
+          </div>
+        </div>
+      </div>
+
+
+      <section class="pb-4">
+        <div class="border rounded-5">
+
+          <section class="w-100 responsive gradient-custom" style="border-radius: .5rem .5rem 0 0;">
+            <style>
+              .gradient-custom {
+                /* fallback for old browsers */
+                background: #6a11cb;
+
+                /* Chrome 10-25, Safari 5.1-6 */
+                background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
+
+                /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+                background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1))
+              }
+            </style>
+            <div class="row">
+              <div class="col-md-8">
+                <div class="card mb-4">
+                  <div class="card-header py-3">
+                    <h5 class="mb-0">Cart - <%= user.cart.cartItems.length %>
+                    </h5>
+                  </div>
+
+
+
+
+
+
+
+
+
+                  <div class="card-body">
+                    <% user.cart.cartItems.forEach(cartItem=> { %>
+                      <div class="row">
+                        <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
+                          <div class="bg-image  hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
+                            <% if (cartItem.product && cartItem.product.images && cartItem.product.images.length> 0) {%>
+
+                              <img src="/images/<%= cartItem.product.images[0] %>" class="w-100"
+                                alt="<%= cartItem.product.name %>">
+                              <% } else { %>
+                                <span>No image available</span>
+                                <% } %>
+                                  <a href="#!">
+                                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
+                                  </a>
+
+                          </div>
+                        </div>
+
+                        <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
+                          <% if (cartItem.product && cartItem.product.name) { %>
+                            <p><strong>
+                                <%= cartItem.product.name %>
+                              </strong></p>
+
+                            <p>
+
+                              Product price ₹ <%= cartItem.product.price %>
+                            </p>
+
+                            <div class="remoov">
+                              <p>
+                                Qty: <%= cartItem.quantity %>
+                              </p>
+
+                              <a href="/removeCart/<%= cartItem.product._id %>">
+                                <button type="button" class="btn btn-primary btn-sm me-1 mb-2" data-mdb-toggle="tooltip"
+                                  aria-label="Remove item" data-mdb-original-title="Remove item">
+                                  <i class="fas fa-trash"></i>
+                                </button>
+                              </a>
+                            </div>
+
+
+                            <% } else { %>
+                              <p><strong>Product not available</strong></p>
+                              <% } %>
+                        </div>
+
+                        <div class="increment col-lg-4 col-md-6 mb-4 mb-lg-0">
+                          <div class="d-flex mb-4" style="max-width: 300px">
+
+                            <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+
+                              <a href="/removeCart/<%= cartItem.product._id %>">
+                                <button type="button" class="btn btn-danger"> <i class="fa-solid fa-minus"></i>
+                                </button>
+                              </a>
+
+                              <button type="button" class="btn btn-warning bg bg-transparent text-black">
+                                <%= cartItem.quantity %>
+                              </button>
+
+
+
+                              <a href="/addCart/<%= cartItem.product._id %>">
+                                <button type="button" class="btn btn-success"> <i class="fa-solid fa-plus"></i>
+                                </button>
+                              </a>
+
+                            </div>
+
+                          </div>
+                          <p class="netprice text-start text-md-center">
+                            <% if (cartItem.product && cartItem.product.price) { %>
+                              <strong>Net Price: <%= cartItem.quantity * cartItem.product.price %></strong>
+                              <% } else { %>
+                                <strong>Price not available</strong>
+                                <% } %>
+                          </p>
+                        </div>
+                      </div>
+                      <hr class="my-4">
+                      <% }) %>
+                  </div>
+
+
+
+
+                </div>
+                <div class="card mb-4">
+                  <div class="card-body">
+                    <p><strong>Expected shipping delivery</strong></p>
+                    <p class="mb-0" id="expectedDeliveryDate"></p>
+                </div>
+                </div>
+                <div class="card mb-4 mb-lg-0">
+                  <div class="card-body">
+                    <p><strong>We accept</strong></p>
+                    <img class="me-2" width="45px"
+                      src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/visa.svg"
+                      alt="Visa">
+                    <img class="me-2" width="45px"
+                      src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/amex.svg"
+                      alt="American Express">
+                    <img class="me-2" width="45px"
+                      src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/mastercard.svg"
+                      alt="Mastercard">
+                    <img class="me-2" width="45px"
+                      src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce/includes/gateways/paypal/assets/images/paypal.png"
+                      alt="PayPal acceptance mark">
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card mb-4">
+                  <div class="card-header py-3">
+                    <h5 class="mb-0">Summary</h5>
+                  </div>
+
+
+
+                  <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                        Products Amount
+                        <span>
+                          ₹ <%= user.cart.price %>
+                        </span>
+                      </li>
+                      <% if (Number(user.cart.price)> 0) { %>
+                        <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                          Shipping
+                          <% if (Number(user.cart.price)> 199) { %>
+                            <span>Free Shipping</span>
+                            <% } else { %>
+                              <span>₹ 199</span>
+                              <% } %>
+                        </li>
+                        <% } %>
+                          <li
+                            class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
+                            <div>
+                              <strong>Total amount</strong>
+                              <p class="mb-0">(including VAT)</p>
+                            </div>
+                            <span>
+                              <% if (Number(user.cart.price)> 199) { %>
+                                ₹ <%= Number(user.cart.price) %>
+                                  <% } else { %>
+                                    <% if (Number(user.cart.price)> 0) { %>
+                                      ₹ <%= Number(user.cart.price) + 199 %>
+                                        <% } else { %>
+                                          ₹ 0 <!-- If product amount is 0, no shipping charges -->
+                                          <% } %>
+                                            <% } %>
+                            </span>
+                          </li>
+                    </ul>
+
+                    <button type="button" onclick="initiatePayment('<%= Number(user.cart.price) %>')"
+                      class="btn btn-primary btn-lg btn-block buy-now-btn">
+                      Go to checkout
+                    </button>
+                  </div>
+
+
+
+
+
+
+
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+
+
+
+
+      <div class="footer">
+        <div class="footertop">
+
+
+          <div class="return">
+            <i aria-hidden="true" class="fas fa-parachute-box"></i>
+            <p><b>60 DAYS RETURN</b>
+              <br>
+              <small>Ultrices dolor massa dui curabitur.</small>
+            </p>
+
+          </div>
+
+          <div class="return1">
+            <i aria-hidden="true" class="fas fa-truck"></i>
+            <p><b>FREE SHIPPING</b>
+              <br>
+              <small>Ultrices dolor massa dui curabitur.</small>
+            </p>
+          </div>
+
+
+
+
+          <div class="inputbox">
+            <h4>Newsletter Sign Up</h4>
+            <input type="email" name="" id="emailinput">
+          </div>
+
+          <a href="/category">
+            <button>submit</button>
+          </a>
+
+
+
+
+
+        </div>
+        <div class="footerbottom">
+
+          <div class="one">
+            <img
+              src="https://websitedemos.net/fashion-designer-boutique-02/wp-content/uploads/sites/917/2021/07/site-logo-white.svg"
+              alt="">
+            <p>Pulvinar aenean dignissim porttitor sed risus urna, pretium quis non id.</p>
+            <div>
+              <i class="ri-instagram-fill">
+
+              </i>
+              <i class="ri-facebook-circle-fill"></i>
+              <i class="ri-twitter-fill"></i>
+            </div>
+          </div>
+
+          <div class="two">
+            <h4>Information</h4>
+            <small>About me</small>
+            <small>My story</small>
+            <small>Awards & achievement</small>
+            <small>Contact</small>
+          </div>
+
+          <div class="three">
+            <h4>Discover</h4>
+            <small>Dresses</small>
+            <small>Bottoms</small>
+            <small>Footwear</small>
+            <small>Accessories</small>
+          </div>
+
+          <div class="four">
+            <h4>Locate Us</h4>
+            <small>123 Demo Blvd, Miami, FL 4567,</small>
+            <small>United States</small>
+            <small>+1 123-456-7890</small>
+            <small>mail@example.com</small>
+          </div>
+        </div>
+
+        <div class="bot">
+          <div>
+            <p>© 2023 Fashion Designer. Powered by Fashion Designer</p>
+          </div>
+          <div class="logos">
+            <img
+              src="https://websitedemos.net/fashion-designer-boutique-02/wp-content/uploads/sites/917/2021/07/fashion-designer-cc-visa-icon.svg"
+              alt="">
+            <img
+              src="https://websitedemos.net/fashion-designer-boutique-02/wp-content/uploads/sites/917/2021/07/fashion-designer-cc-mastercard-icon.svg"
+              alt="">
+            <img
+              src="https://websitedemos.net/fashion-designer-boutique-02/wp-content/uploads/sites/917/2021/07/fashion-designer-cc-discover-icon.svg"
+              alt="">
+            <img
+              src="https://websitedemos.net/fashion-designer-boutique-02/wp-content/uploads/sites/917/2021/07/fashion-designer-cc-apple-pay-icon.svg"
+              alt="">
+
+          </div>
+        </div>
+
+
+
+      </div>
+
+
+
+
+
+    </div>
+  </div>
+
+
+
+  <!-- Include jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+  <!-- Include Razorpay.js -->
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+  <script>
+    // Function to initiate payment
+    function initiatePayment(price) {
+      console.log("Initial Price:", price);
+
+      if (price != 0) {
+        if (Number(price) < 0) {
+          price = Number(price) + 199;
+        } else if (Number(price) < 199) {
+          price = Number(price) + 199;
+        }
+      } else {
+        price = Number(price);
+      }
+
+
+
+
+      console.log("Adjusted Price:", price);
+
+      $.ajax({
+        url: '/create-order',
+        method: 'POST',
+        data: {
+          amount: price
+        },
+        success: function (order) {
+          // Display the payment form
+          const options = {
+            key: 'rzp_test_bI0IzXukUxGWWc', // Replace with your key_id
+            amount: order.amount,
+            currency: order.currency,
+            name: 'Clothify Klaviyo',
+            description: 'Product Purchase',
+            order_id: order.id,
+
+            "image": "/images/paylogo.png",
+
+
+            handler: function (response) {
+              // Handle the response after payment success
+              verifyPayment(response);
+            },
+          };
+
+          const rzp = new Razorpay(options);
+          rzp.open();
+        },
+      });
+    }
+
+    // Function to verify payment
+    function verifyPayment(response) {
+      $.ajax({
+        url: '/verify-payment',
+        method: 'POST',
+        data: {
+          orderId: response.razorpay_order_id,
+          paymentId: response.razorpay_payment_id,
+          signature: response.razorpay_signature,
+        },
+        success: function (result) {
+          if (result.success) {
+            // Payment successful, handle accordingly
+            alert('Payment successful!');
+          } else {
+            // Payment verification failed, handle accordingly
+            alert('Payment verification failed!');
+          }
+        },
+      });
+    }
+  </script>
+
+
+
+
+
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<!-- MDB -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.0.0/mdb.umd.min.js"></script>
+<!-- Include Axios library -->
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.0/axios.min.js"
+  integrity="sha512-WrdC3CE9vf1nBf58JHepuWT4x24uTacky9fuzw2g/3L9JkihgwZ6Cfv+JGTtNyosOhEmttMtEZ6H3qJWfI7gIQ=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    // Get the current date
+    const currentDate = new Date();
+
+    // Calculate the delivery date by adding seven days to the current date
+    const deliveryDate = new Date(currentDate);
+    deliveryDate.setDate(currentDate.getDate() + 7);
+
+    // Format the delivery date as a string (you can customize the format as needed)
+    const formattedDeliveryDate = deliveryDate.toDateString();
+
+    // Display the formatted delivery date in the HTML element
+    document.getElementById("expectedDeliveryDate").textContent = formattedDeliveryDate;
+</script>
+
+</html>
